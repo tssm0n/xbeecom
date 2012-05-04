@@ -1,0 +1,4 @@
+A set of libraries in Python and Arduino to add a communications protocol over top of the xbee wireless interface.  This protocol gives packages all communication into packets that include a source, destination, packet number, data and checksum.  This was created to provide a way for the nodes to have a more advanced protocol when running in a serial line replacement mode, without the need to run in API mode.
+
+For the Python interface, use the SerialCom class with a serial port or USB Xbee unit.
+For the Arduno interface, copy the .cpp and .h into your sketch, and use the Xbee with either a hardware or software serial interface.
