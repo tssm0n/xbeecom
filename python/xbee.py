@@ -143,8 +143,11 @@ class SerialCom(XbeeCom):
         thread.start_new_thread(self.monitor, ())
     def monitor(self):
         while not self.done:
-            input = self.serial.read(1)
-            self._process_input(input)
+            try:
+                input = self.serial.read(1)
+                self._process_input(input)
+            except:
+                print "Error receiving data: ", sys.exc_info()[0]
         self.serial.close()
     def exit(self):
         self.done = True
